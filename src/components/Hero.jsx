@@ -8,7 +8,7 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadedVidoes, setLoadedVidoes] = useState(0);
 
-  const totalVideos = 3;
+  const totalVideos = 4;
   const nextVideoRef = useRef(null);
 
   const handleVideoLoad = () => {
@@ -17,16 +17,18 @@ const Hero = () => {
 
   // Modulo operator : used to loop videos
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
-  //0 % 3 = 0 + 1 => 1
-  //1 % 3 = 1 + 1 => 2
-  //2 % 3 = 2 + 1 => 3
-  //3 % 3 = 0 + 1 => 1
-  //4 % 3 = 1 + 1 => 2 
+  //0 % 4 = 0 + 1 => 1
+  //1 % 4 = 1 + 1 => 2
+  //2 % 4 = 2 + 1 => 3
+  //3 % 4 = 3 + 1 => 4
+  //4 % 4 = 0 + 1 => 1 
 
   const handleMinVidClick = () => {
     setHasClicked(true);
     // setCurrentIndex((prevIndex) => prevIndex+1);
     setCurrentIndex(upcomingVideoIndex);
+    console.log(upcomingVideoIndex);
+    console.log(currentIndex);
   }
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
@@ -39,7 +41,7 @@ const Hero = () => {
               <div onClick={handleMinVidClick} className='origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100'>
                 <video 
                   ref={nextVideoRef}
-                  src={getVideoSrc(currentIndex+1)}
+                  src={getVideoSrc(upcomingVideoIndex)}
                   loop
                   muted
                   id='current-video'
@@ -48,6 +50,25 @@ const Hero = () => {
                 />
               </div>
           </div>
+
+          <video
+             ref={nextVideoRef}
+             src={getVideoSrc(currentIndex)}
+             loop
+             muted
+             id='next-video'
+             className='absolute-center invisible absolute z-20 size-64 object-cover object-center'
+             onLoadedData={handleVideoLoad}
+          />
+
+          <video 
+            src={getVideoSrc(currentIndex)}
+            autoPlay
+            loop
+            muted
+            className='absolute left-0 top-0 size-full object-cover object-center'
+            onLoadedData={handleVideoLoad}
+          />
         </div>
       </div>
     </div>
