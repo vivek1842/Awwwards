@@ -29,6 +29,11 @@ body{
         font-family: 'robert-regular';
         src: url('/fonts/robert-regular.woff2') format('woff2');
     }
+    
+    @font-face {
+      font-family: "zentry";
+      src: url("/fonts/zentry-regular.woff2") format("woff2");
+    }
 }
 
 @layer utilities {
