@@ -70,6 +70,10 @@ const Hero = () => {
             onLoadedData={handleVideoLoad}
           />
         </div>
+
+        <h1 className="special-font hero-heading">
+            Gaming
+        </h1>
       </div>
     </div>
   )
