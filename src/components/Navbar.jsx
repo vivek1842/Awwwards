@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable no-unused-vars */
+
 import { useEffect, useRef, useState } from "react"
 import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";

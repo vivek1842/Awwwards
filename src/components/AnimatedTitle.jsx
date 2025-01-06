@@ -3,8 +3,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap"; 
 
-
-/* eslint-disable no-unused-vars */
 const AnimatedTitle = ({title, containerClass}) => {
   const containerRef = useRef(null);
 
