@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useRef } from "react"
 import AnimatedTitle from "./AnimatedTitle"
 import gsap from "gsap";
